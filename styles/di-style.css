@@ -1,7 +1,5 @@
-/* Estilos Proyecto "Diversidad Identitaria" con Power */
+/* Estilos Proyecto "Diversidad-ID" */
 html {font-size:16px;}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
 h1, h2, h3 {
 font-family: 'Roboto Condensed', sans-serif;
@@ -10,6 +8,12 @@ font-weight:bold;
 a {color:#FF955C;font-weight: 600;text-decoration:underline;}/* antes #FF002B*/
 a:hover {color:#FF955C;text-decoration: none;}
 
+.text-sm {
+    font-size:0.8rem;
+}
+.text-md {
+    font-size: 20px;
+}
 .text-power {
     color: #FF002B;
 }
@@ -51,21 +55,34 @@ a:hover {color:#FF955C;text-decoration: none;}
 .navbar {
     border-bottom: 1px solid #444;
 }
+
+@media screen and (min-width:768px) {
+    .navbar-nav {
+        margin-left: -90px;
+}}
 .navbar-dark .navbar-toggler {
-    border-color:rgba(255, 255, 255, 0.4);
+    border-color:#85898c;
     margin-left: 1rem!important;
 }
 .navbar-dark .navbar-toggler span {
-    color: rgba(255, 255, 255, 0.5);
+    color: #9a9da0;
 }
 .navbar-toggler:focus, .navbar-toggler:hover {
     outline: none;
 }
-.navbar-collapse.show a {
+.navbar-collapse a {
     margin-left: 1rem;
 }
-.navbar-collapse.show .navbar-btn {
-    margin: 1rem!important;
+.navbar-collapse .navbar-btn {
+    margin-left: 1rem;
+}
+@media screen and (min-width:768px) {
+    .navbar-collapse a {
+        margin-left: inherit;
+    }
+    .navbar-collapse .navbar-btn {
+        margin: inherit;
+    }
 }
 .navbar-dark .navbar-nav .active>.nav-link {
     color:#FF955C;/*antes #ffb733*/
@@ -82,7 +99,7 @@ a:hover {color:#FF955C;text-decoration: none;}
     text-decoration:none;
 }
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,.7);
+    color: #bbbdbf;
     font-weight:400;
     text-decoration:none;
 }
@@ -97,13 +114,14 @@ a:hover {color:#FF955C;text-decoration: none;}
 .nav-item:hover {
     background-color: #505350;
 }
+
 /* Logo blanco */
 #miLogoBco {
-    display:flow-root;
+    /*display:flow-root;*/
     visibility:hidden;
 }
 /* Comparte Sticky */
-#comparteSticky {
+.comparte-sticky {
     margin-top:6rem;
     background-color:black;
     right:0;
@@ -119,11 +137,9 @@ a:hover {color:#FF955C;text-decoration: none;}
     display: block;
     text-align: center;
     width:56px;
-    height:56px;
     padding: 16px;
     transition: all 0.3s ease;
     color: #999;
-    font-size: 20px;
     border-bottom: 1px solid #333;
   }
 .icon-bar a:last-child {
@@ -158,7 +174,7 @@ a:hover {color:#FF955C;text-decoration: none;}
     height: 70px;
 }}
 /* Storyline Navbar mobile */
-#StoryNav-container {
+.storynav-container {
     top: 50px;
     z-index:999;
     padding:15px;
@@ -166,32 +182,33 @@ a:hover {color:#FF955C;text-decoration: none;}
 }
 
 /* Storyline Navbar*/
-#StoryNav .nav-item a {
+.storynav .nav-item a {
     font-weight:400;
     text-decoration:none;
     color: rgb(51, 51, 51);
 }
-#StoryNav .nav-item:hover {
+.storynav .nav-item:hover {
     background-color: #f8f9fa;
     text-decoration:none;
 }
-#StoryNav .nav-pills {
+.storynav .nav-pills {
     top: 80px;
 }
-#StoryNav .nav-pills .nav-link {
+.storynav .nav-pills .nav-link {
     border-radius: 0;
 }
-#StoryNav .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.storynav .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #333333;
     background-color: inherit
 }
-#StoryNav .nav-link {
+.storynav .nav-link {
     border-bottom: 1px solid #dedede;
     border-radius: 0;
 }
-#StoryNav .nav-link.active {
+.storynav .nav-link.active {
     border-left: 7px solid #FF002B;
     background-color: #f8f9fa;
+    color: rgb(51, 51, 51);
     font-weight: bold;
 }
 .nav-tabs.nav-tabs-dropdown, .nav-tabs-dropdown {
@@ -199,8 +216,7 @@ a:hover {color:#FF955C;text-decoration: none;}
   }
 
 /* Storyline Content */
-#storylineContent .blockquote {
-    background-color: rgba(255,255,255,0.4);
+.storyline-content .blockquote {
     border-radius: 6px;
 }
 /* Blockquote */
@@ -215,7 +231,7 @@ a:hover {color:#FF955C;text-decoration: none;}
     color: #FFA270;
 }
 /* Iconos */
-blockquote i.fa-external-link-alt, footer i.fa-twitter {
+blockquote .fa-external-link-alt, footer .fa-twitter {
     font-size:10px;
     font-weight:normal;
     margin-right:8px;
@@ -235,15 +251,105 @@ blockquote i.fa-external-link-alt, footer i.fa-twitter {
 }
 /* Glosario */
 .subtitulo span{
+    /*box-sizing: border-box;*/
     border-bottom: 3px solid #FF002B;
-    height: 3px;
+    /*height: 3px;*/
     position: absolute;
     width: 165px;
 }
+/* Recursos */
+.badge {
+    padding: 0.35em 0.5em 0.45em;
+    text-decoration: none;
+    margin:0.5rem;
+    margin-bottom:0.5rem;
+}
+.badge-all, .badge-publicacion, .badge-guia, .badge-audio, .badge-video, .badge-imagen {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+.badge-all:hover, .badge-all.active {
+    color:#fff;
+    background-color: #1d2124;
+}
+.badge-publicacion:hover, .badge-publicacion.active {
+    color:#fff;
+    background-color: #48247F;
+}
+.badge-guia:hover, .badge-guia.active {
+    color:#fff;
+    background-color: #C25080;
+}
+.badge-audio:hover, .badge-audio.active {
+    color:#fff;
+    background-color: #02A196;
+}
+.badge-video:hover, .badge-video.active {
+    color:#fff;
+    background-color: #FF955C;
+}
+.badge-imagen:hover, .badge-imagen.active {
+    color:#fff;
+    background-color: #048BA8;
+}
+
+tag {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width:30px;
+    color: #fff;
+    font-weight:400;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border:1px solid #ccc;
+    border-right:0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tag-default {
+    background-color: #666;
+}
+.tag-publicacion {
+    background-color: #48247F;
+}
+.tag-guia {
+    background-color: #C25080;
+}
+.tag-audio {
+    background-color: #02A196;
+}
+.tag-video {
+    background-color: #FF955C;
+}
+.tag-imagen {
+    background-color: #048BA8;
+}
+  
 /* Formulario */
 label {
     font-size:0.8rem;
     font-weight:bold;
+}
+.btn-light {
+    border: 1px solid #ced4da;
+}
+/* Pagination */
+.pagination a {
+    text-decoration: none;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #212529;
+    border-color: #202020;
+}
+.page-link {
+    color: #333;
+}
+.page-link:hover {
+    color: #333;
 }
 /* Footer */
 footer a {
@@ -255,20 +361,21 @@ footer a {
     padding-top:0.5rem;
 }
 /* Scroll to top */
-.up-arrow {
+/*.up-arrow {
     color:#dedede;
     font-size:20px;
-}
-
+}*/
 #toTop {
     display: none;
+}
+.to-top {
     position: fixed;
     bottom: 20px;
     right: 30px;
     z-index: 99;
     font-size: 18px;
     border: none;
-    outline: none;
+    /*outline: none;*/
     background-color: #FF002B;
     color: white;
     cursor: pointer;
@@ -276,6 +383,6 @@ footer a {
     border-radius: 4px;
   }
   
-  #toTop:hover {
+  .to-top:hover {
     background-color: #FF955C;
   }

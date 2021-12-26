@@ -32,12 +32,12 @@
     <!-- Compartir Sticky -->
     <div class="container-fluid">
       <div class="row">
-      <div id="comparteSticky" class="d-none d-md-block d-xl-block position-fixed flex-column p-1">
+      <div id="comparteSticky" class="comparte-sticky d-none d-md-block d-xl-block position-fixed flex-column p-1">
         <div class="icon-bar text-center">
           <p class="comparteTitle mb-0">Comparte</p>
-          <a href="#" class="h-100 justify-content-center"><i class="fab fa-facebook"></i></a> 
-          <a href="#" class="h-100 justify-content-center"><i class="fab fa-twitter"></i></a> 
-          <a href="#" class="h-100 justify-content-center"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="h-100 justify-content-center text-md"><i class="fab fa-facebook"></i></a> 
+          <a href="#" class="h-100 justify-content-center text-md"><i class="fab fa-twitter"></i></a> 
+          <a href="#" class="h-100 justify-content-center text-md"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -81,15 +81,35 @@
 
     <!-- Main content -->
     <div class="container mb-3">
-        <div class="row">
-            <div class="col-12"><h2 class="mt-5 mb-4">Recursos</h2></div>
+        <div class="row mt-5 mb-4">
+            <div class="col-md-3"><h2>Recursos</h2></div>
+            <div class="col-md-6 mb-2 text-center">
+              <a href="#" class="badge badge-all text-sm active">Todos</a>
+              <a href="#" class="badge badge-publicacion text-sm">Publicaciones</a>
+              <a href="#" class="badge badge-imagen text-sm">Imágenes</a>
+              <a href="#" class="badge badge-guia text-sm">Guías</a>
+              <a href="#" class="badge badge-audio text-sm">Audio</a>
+              <a href="#" class="badge badge-video text-sm">Videos</a>
+            </div>
+            <div class="col-md-3">
+              <form>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Buscar por...">
+                  <div class="input-group-append">
+                    <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
         </div>
 
       <div class="row">       
             <div class="col-md-6 col-lg-3 mb-5">      
-                <div class="card shadow h-100 text-center">
+                <div class="card card-guia shadow h-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/ableism.jpg" alt="Dibujo de una mano entregando una tarjeta que dice 'capacitismo'">
+                    <tag class="tag-guia text-sm"><i class="far fa-list-ul"></i></tag>             
                     <div class="card-body text-center">
+                        
                         <h3>Tarjeta explicativa sobre capacitismo</h3>
                     <p class="card-text">Tarjeta plegable para imprimir y entregar, inspirada en Adrian Piper.</p>
                     </div>
@@ -97,8 +117,9 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-5">
-                <div class="card shadow h-100 text-center">
+                <div class="card card-publicacion shadow h-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/resistance.jpg" alt="Portada ilustrada de libro">
+                    <tag class="tag-publicacion text-sm"><i class="far fa-file-alt"></i></tag> 
                     <div class="card-body text-center">
                     <h3>Resistencia y esperanza</h3>
                     <p class="card-text">Ensayos escritos por Personas con Discapacidad, por Alice Wong</p>
@@ -107,8 +128,9 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-5">
-                <div class="card shadow h-100 text-center">
+                <div class="card card-guia shadow h-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/pronouns.jpg" alt="Pins de color amarillo o verde que dicen 'Mis pronombres son'">
+                    <tag class="tag-guia text-sm"><i class="far fa-list-ul"></i></tag> 
                     <div class="card-body">
                         <h3>Guía de Pronombres</h3>
                         <p class="card-text">Guía para aprender a usar los pronombres correctos de las personas.</p>
@@ -117,8 +139,9 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-5">
-                <div class="card shadow h-100 text-center">
+                <div class="card card-guia shadow h-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/healing.jpg" alt="Portada de libro con el dibujo de manos en espiral que toman un recuadro">
+                    <tag class="tag-guia text-sm"><i class="far fa-list-ul"></i></tag> 
                     <div class="card-body">
                     <h3>Healing in Action</h3>
                     <p class="card-text">Kit de herramientas sobre "Black Lives Matter", Justicia curativa & Acción directa. Por <a href="https://blacklivesmatter.com/resources/" target="_blank">BlackLivesMatters.com</a>.</p>
@@ -130,8 +153,9 @@
 
         <div class="row">       
             <div class="col-sm-6 col-md-3">
-                <div class="card shadow w-100 text-center">
-                    <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card image">
+                <div class="card card-audio shadow w-100 text-center">
+                    <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card audio">
+                    <tag class="tag-audio text-sm"><i class="fas fa-podcast"></i></tag> 
                     <div class="card-body">
                     <h3>Documento 5</h3>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum metus eget sem congue hendrerit. </p>
@@ -140,8 +164,9 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                <div class="card shadow w-100 text-center">
-                    <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card image">
+                <div class="card card-video shadow w-100 text-center">
+                    <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card video">
+                    <tag class="tag-video text-sm"><i class="fas fa-film"></i></tag> 
                     <div class="card-body">
                     <h3>Documento 6</h3>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum metus eget sem congue hendrerit. </p>
@@ -150,8 +175,9 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                <div class="card shadow w-100 text-center">
+                <div class="card card-imagen shadow w-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card image">
+                    <tag class="tag-imagen text-sm"><i class="far fa-image"></i></tag> 
                     <div class="card-body">
                     <h3>Documento 7</h3>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum metus eget sem congue hendrerit. </p>
@@ -160,8 +186,9 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                <div class="card shadow w-100 text-center">
+                <div class="card card-imagen shadow w-100 text-center">
                     <img class="card-img-top mb-3" src="static/images/img-placeholder.jpg" alt="Card image">
+                    <tag class="tag-imagen text-sm"><i class="far fa-image"></i></tag> 
                     <div class="card-body">
                     <h3>Documento 8</h3>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum metus eget sem congue hendrerit. </p>
@@ -171,16 +198,15 @@
             </div>
         </div>
     </div> 
-    
 
-    <!-- CTA -->
-    <div class="jumbotron mt-5 mb-0 text-center">
-      <div class="container">
-        <h3 class="card-title">Juntos somos más visibles<br>¡Participa!</h3>
-        <p class="card-text">Si te motiva esta temática y quieres colaborar, comunícate con nosotros.</p>
-        <button class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#modalContacto">Únete a la causa</button>
-      </div>
-    </div>
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center my-5">
+      <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+    </ul>
 
     <!-- Footer -->
     <footer class="bg-dark text-light m-0 p-5 text-center">    
@@ -194,7 +220,7 @@
             </div>
       </footer>
 
-    <button  id="toTop" title="Ir hacia arriba"><i class="fas fa-chevron-up"></i></button>
+    <button  id="toTop" class="to-top" title="Ir hacia arriba"><i class="fas fa-chevron-up"></i></button>
 
     <!-- Modal Contacto -->
     <div id="modalContacto" class="modal fade" role="dialog">
@@ -331,7 +357,6 @@
       $("#formContact").css("display","block")
       $("#mensajeOK").css("display","none")
     });
-
 </script>
 
 </body>
