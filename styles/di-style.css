@@ -117,7 +117,7 @@ a:hover {color:#FF955C;text-decoration: none;}
 
 /* Logo blanco */
 #miLogoBco {
-    /*display:flow-root;*/
+    display:flow-root;
     visibility:hidden;
 }
 /* Comparte Sticky */

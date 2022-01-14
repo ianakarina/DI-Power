@@ -1,6 +1,6 @@
-# Proyecto Diversidad Identitaria by DI Power
+# Proyecto Diversidad-ID
 
-Sitio web responsive construido con Bootstrap, para el primer módulo del curso Front End 2021.
+Sitio web responsive construido con Bootstrap 4 & Sass.
 
 ## Instalación
 
