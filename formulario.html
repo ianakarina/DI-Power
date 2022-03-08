@@ -1,0 +1,50 @@
+<!-- Formulario -->
+<form id="formContact" name="formContact" action="">
+    <p>Estamos buscando <strong>personas como tú</strong>. Ingresa tus datos a continuación:</p>
+    <!-- Nombre -->
+    <div class="form-group">
+        <label for="nombre">* Nombre:</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre" name="nombre" onkeypress="return permite(event, 'car');" onblur="validaName(this)">
+        <div id="mensajeNombre" class="invalid-feedback">Falta ingresar tu Nombre.</div>
+    </div>
+    <!-- Correo -->
+    <div class="form-group">
+        <label for="email">* Correo electrónico:</label>
+        <input type="email" class="form-control" id="email" placeholder="Escribe tu email" name="email" onblur="validaEmail(this)">
+        <div id="mensajeEmail" class="invalid-feedback">Falta ingresar tu Email</div>
+    </div>
+
+    <!-- Motivo -->
+    <div class="form-group">
+        <label for="motivo">* ¿Por qué te interesa inscribirte? </label><br>
+        <textarea id="motivo" name="motivo" class="form-control" rows="3" placeholder="Escribe aquí tu motivación" onblur="validaMotivo(this)"></textarea>
+        <div id="mensajeMotivo" class="invalid-feedback">Por favor, indícanos por qué te motiva colaborar con esta causa.</div>
+    </div>
+    <!-- Condiciones -->
+    <div class="form-group form-check">
+        <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" id="acepta" name="acepta" onclick="validaAcepta(this)"> * Acepto que me contacten por correo electrónico.
+        <div id="mensajeAcepta" class="invalid-feedback">Tienes que aceptar las condiciones.</div>
+        </label>
+    </div>
+    <hr>
+    <div class="w-100">
+    <button id="" type="button" onclick="validaForm()" class="btn btn-brand mt-2 mb-4">Enviar</button>
+    </div>
+</form>
+
+<!-- Mensaje OK -->
+<div id="mensajeOK" style="display:none;">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">¡Bien hecho!</h4>
+        <p>Recibimos tu mensaje correctamente, gracias por unirte a <strong>Diversidad-ID</strong>.</p>
+        <p class="mb-0">Pronto te contactaremos para que te integres a nuestro grupo de difusión.</p>
+    </div>
+    <hr>
+    <div><h5>Mensaje enviado:</h5></div>
+    <div id="resumenMensaje"></div>
+    <hr>
+    <div class="text-center">
+        <button id="btnCerrar" type="button" class="btn btn-brand mt-4 mb-4" data-dismiss="modal">Cerrar</button>
+        </div>
+</div>

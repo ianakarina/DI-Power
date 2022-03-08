@@ -6,17 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diversidad identitaria</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="styles/style.css">
-
-    <style>
-      
-    </style>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,13 +24,16 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="./scripts/scripts.js"></script>
 </head>
 
 <body id="DIpower" data-spy="scroll" data-target="#storylineNav" data-offset="1">
     <!-- Compartir Sticky -->
     <div class="container-fluid">
       <div class="row">
-      <div id="comparteSticky" class="comparte-sticky d-none d-md-block d-xl-block position-fixed flex-column p-1">
+      <div id="comparteSticky" class="comparte-sticky d-none d-md-block d-xl-block position-fixed flex-column pt-1 px-1">
         <div class="icon-bar text-center">
           <p class="comparteTitle mb-0">Comparte</p>
           <a href="#" class="h-100 justify-content-center text-md"><i class="fab fa-facebook"></i></a> 
@@ -75,7 +76,7 @@
             <a class="nav-link" href="recursos.html">Recursos</a>
           </li>  
         </ul>
-        <button class="btn btn-brand navbar-btn mx-2" data-toggle="modal" data-target="#modalContacto">Únete</button>
+        <button id="btnSuperior" class="btn btn-brand navbar-btn mx-2" data-toggle="modal" data-target="#modalContacto">Únete</button>
       </div>  
     </nav>
 
@@ -102,7 +103,7 @@
       <div class="container">
         <h3 class="card-title">Juntos somos más visibles ¡Participa!</h3>
         <p class="card-text">Si te motiva esta temática y quieres colaborar, comunícate con nosotros.</p>
-        <button class="btn btn-brand navbar-btn" data-toggle="modal" data-target="#modalContacto">Únete a la causa</button>
+        <button id="btnInferior" class="btn btn-brand navbar-btn" data-toggle="modal" data-target="#modalContacto">Únete a la causa</button>
       </div>
     </div>
 
@@ -132,130 +133,10 @@
           </div>
 
           <!-- Modal body -->
-          <div class="modal-body">
-              
-            <form id="formContact" action="" class="needs-validation" novalidate>
-              <p>Estamos buscando <strong>personas como tú</strong> para gritarle al mundo la importancia de respetar nuestra identidad personal.
-                Ingresa tus datos a continuación:</p>
-
-              <div class="form-group">
-                <label for="uname">* Nombre:</label>
-                <input type="text" class="form-control" id="uname" placeholder="Escribe tu nombre" name="uname" required>
-                <div class="invalid-feedback">Por favor ingresa tu nombre real.</div>
-              </div>
-              <div class="form-group">
-                <label for="email">* Correo electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="Escribe tu email" name="email" required>
-                <div class="invalid-feedback">Ingresa correctamente tu email.</div>
-              </div>
-              <div class="form-group">
-                <label for="insta"> Perfil de Instagram (opcional)</label>
-                <input type="text" class="form-control" id="insta" placeholder="@nombreInstagram" name="insta">
-                <div class="invalid-feedback">Ingresa un Perfil de Instagram válido.</div>
-              </div>
-              <div class="form-group">
-                <label for="twitter"> Perfil de Twitter (opcional)</label>
-                <input type="text" class="form-control" id="twitter" placeholder="@nombreTwitter" name="twitter">
-                <div class="invalid-feedback">Ingresa un perfil de Twitter válido.</div>
-              </div>
-              <div class="form-group form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="remember" required> * Quiero que me contacten por correo electrónico.
-                  <div class="invalid-feedback">Tienes que aceptar las condiciones.</div>
-                </label>
-              </div>
-              <hr>
-              <div class="w-100">
-              <button id="" type="submit" class="btn btn-brand mt-2 mb-4">Enviar</button>
-            </div>
-            </form>
-
-            <!-- Mensaje OK -->
-            <div id="mensajeOK" style="display:none;">
-              <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">¡Bien hecho!</h4>
-                <p>Recibimos tu mensaje correctamente, gracias por unirte a <strong>Diversidad-ID</strong>.</p>
-                <p class="mb-0">Pronto te contactaremos para que te integres a nuestro grupo de difusión.</p>
-              </div>
-              <hr>
-              <div class="text-center">
-                <button id="btnCerrar" type="button" class="btn btn-brand mt-4 mb-4" data-dismiss="modal">Cerrar</button>
-                </div>
-              </div>
-            </div>
+          <div id="modalBody" class="modal-body"></div>
         </div>
       </div>
     </div>
-
-  <!-- Scripts -->
-  <script>
-
-    // Inicializa
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip({ animated: 'fade', html: true });
-    });
-    
-    //Obtener elementos
-    var mybutton = document.getElementById("toTop");
-    var mylogo = document.getElementById("miLogoBco");
-
-    // Mostrar/ocultar elementos con scroll down/up
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-        mylogo.style.visibility = "visible";
-      } else {
-        mybutton.style.display = "none";
-        mylogo.style.visibility = "hidden";
-      }
-    }
-
-    // Sube al top
-    $('#toTop').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-    });
-
-    // My Storyline Mobile
-      //tab selection with a dropdown list for small devices
-    $('#tab_selector').on('change', function (e) {
-        $('.form-tabs li a').eq($(this).val()).tab('show');
-    });
-
-    // Formulario
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Get the forms we want to add validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-
-    // Botón Enviar
-    $("#btnEnviar").on("click",function(){
-      $("#formContact").css("display","none")
-      $("#mensajeOK").css("display","block")
-    });
-
-    // Botón Cerrar
-    $("#btnCerrar").on("click",function(){
-      $("#formContact").css("display","block")
-      $("#mensajeOK").css("display","none")
-    });
-
-</script>
 
 </body>
 </html>

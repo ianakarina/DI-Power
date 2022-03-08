@@ -1,6 +1,7 @@
 # Archivos fuente de Proyecto
 /static/psd
 /node_modules/
+/scripts/no/
 /styles/partials/
 /styles/no/
 /styles/*.scss
