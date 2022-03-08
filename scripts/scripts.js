@@ -167,15 +167,21 @@ let mensaje="";
     // Nombre
     let valorNombre=document.forms["formContact"]["nombre"].value;
 
-    // No permitir el envío solo con espacios
-    if( valorNombre == null || valorNombre.length == 0 || /^\s+$/.test(valorNombre) ) {
-        $("#mensajeNombre").show();
+    // No permitir el envío con Null, vacío o solo con espacios
+    //if( valorNombre == null || valorNombre.length == 0 || /^\s+$/.test(valorNombre) || !(/[a-zA-Z]/.test(valorNombre)) || /^[0-9]/.test(valorNombre)) {
+    if( valorNombre == null || valorNombre.length == 0 || /^\s+$/.test(valorNombre)) {
+        $("#mensajeNombre").html("Falta ingresar tu Nombre.").show();
+        $("#nombre").addClass("is-invalid")
+        formValido=false;
+    // No permite el envío con caracteres no alfabéticos
+    } else if( /[^a-zA-Z]/.test(valorNombre)) {
+        $("#mensajeNombre").html("Por favor ingresa tu nombre sin caracteres extraños.").show();
         $("#nombre").addClass("is-invalid")
         formValido=false;
 
     } else {
         mensaje= mensaje + "- <b>Nombre:</b> " + valorNombre + ".</br>";
-        $("#mensajeNombre").hide();
+        $("#mensajeNombre").hide().empty();
         $("#nombre").removeClass("is-invalid").addClass("is-valid") 
     }
     
